@@ -1,9 +1,10 @@
 pipeline{
     agent any
     stages{
-        stage('git clone')
-        steps{
-            git url "https://github.com/Arushi9741/new-repo.git",branch:main
+        stage('git clone'){
+            steps{
+                git url "https://github.com/Arushi9741/new-repo.git",branch:"main"
+            }
         }
 
         stage('dependency'){

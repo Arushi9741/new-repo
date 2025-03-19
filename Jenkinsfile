@@ -3,15 +3,15 @@ pipeline{
     stages{
         stage('git clone'){
             steps{
-                git url "https://github.com/Arushi9741/new-repo.git",branch:"main"
+                git url "https://github.com/Arushi9741/new-repo.git", branch:"main"
             }
         }
 
         stage('dependency'){
             steps{
                 bat ' ' '
-                call venv\\Scripts\\active
                 python -m venv venv
+                call venv\\Scripts\\active
                 python -m pip install --upgrade pip
                 pip install pytest
                 ' ' '
